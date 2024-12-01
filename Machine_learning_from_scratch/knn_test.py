@@ -23,7 +23,7 @@ if not ml_algo.is_dir():
 
 file_path = ml_algo / "KNN.py"
 with open(file_path,"wb") as file:
-  request = requests.get("https://raw.githubusercontent.com/AMITABHSHUKLA/ML_from_scratch/refs/heads/main/Machine_learning_from_scratch/KNN.py")
+  request = requests.get("Raw_file_path")
   print("file downloaded")
   print(request)
   file.write(request.content)
