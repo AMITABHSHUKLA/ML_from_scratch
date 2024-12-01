@@ -24,7 +24,7 @@ class KNN:
         max_vote = Counter(k_nearest_labels).most_common()[0][0]
         return max_vote 
     
-    def predict(self,x):
-        predictions = [self.predict_x(x) for x in self.x_train]
+    def predict(self,x_test):
+        predictions = [self.predict_x(x) for x in x_test]
         return predictions 
         
