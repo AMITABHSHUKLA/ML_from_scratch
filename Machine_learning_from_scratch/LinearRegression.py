@@ -25,7 +25,7 @@ class LinearRegression:
             db = (1/x.shape[0])*(np.sum(y_pred-y)) 
             #update weights and biases
             self.weights = self.weights - self.lr*dw 
-            self.bias = self.bias - self.lr.db 
+            self.bias = self.bias - self.lr*db 
     def predict(self,x_test):
         predictions = [(np.dot(x,self.weights) + self.bias) for x in x_test]
         return predictions 
