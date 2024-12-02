@@ -14,10 +14,11 @@ class LinearRegression:
     def fit(self,x,y):
         self.x_train = x
         self.y_train = y
-        self.weights = np.zeros((x.shape[1])) 
+        n_sample, n_features = x.shape
+        self.weights = np.zeros((n_features)) 
         self.bias = 0 
         for _ in range(self.epochs):
-            y_pred = np.dot(self.weights,x) + self.bias 
+            y_pred = np.dot(x,self.weights) + self.bias 
             print(mse(y_pred,self.y_train))
             #calculate the derivatives 
             dw = (1/x.shape[0])*(np.dot(x.T,(y_pred-y))) 
@@ -26,6 +27,6 @@ class LinearRegression:
             self.weights = self.weights - self.lr*dw 
             self.bias = self.bias - self.lr.db 
     def predict(self,x_test):
-        predictions = [(np.dot(self.weights,x) + self.bias) for x in x_test]
+        predictions = [(np.dot(x,self.weights) + self.bias) for x in x_test]
         return predictions 
             
